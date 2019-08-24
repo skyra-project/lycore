@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyCore", "LyCore\LyCore.csproj", "{FC8B1A40-2B2F-42CB-99EA-39FD719F89BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ryana", "Ryana\Ryana.csproj", "{115BB6DE-1359-4BCA-833A-1027939B45E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuLink", "NeuLink\NeuLink.csproj", "{87D34526-9B3A-4F54-8469-D5E294A50DC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC8B1A40-2B2F-42CB-99EA-39FD719F89BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC8B1A40-2B2F-42CB-99EA-39FD719F89BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC8B1A40-2B2F-42CB-99EA-39FD719F89BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC8B1A40-2B2F-42CB-99EA-39FD719F89BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{115BB6DE-1359-4BCA-833A-1027939B45E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{115BB6DE-1359-4BCA-833A-1027939B45E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{115BB6DE-1359-4BCA-833A-1027939B45E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{115BB6DE-1359-4BCA-833A-1027939B45E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87D34526-9B3A-4F54-8469-D5E294A50DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87D34526-9B3A-4F54-8469-D5E294A50DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87D34526-9B3A-4F54-8469-D5E294A50DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87D34526-9B3A-4F54-8469-D5E294A50DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
