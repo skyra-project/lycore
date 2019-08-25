@@ -8,4 +8,10 @@
       <ProjectReference Include="..\Ryana\Ryana.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <Content Include="assets\credits.png"/>
+        <Content Include="assets\leaderboard.png"/>
+        <Content Include="assets\reputation.png"/>
+    </ItemGroup>
+
 </Project>

@@ -1,4 +1,3 @@
-using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using ImageMagick;
@@ -13,7 +12,7 @@ namespace Ryana.ImageGeneration
 		private static readonly PixelReadSettings ProfilePremiumPixelReadSettings =
 			new PixelReadSettings(800, 548, StorageType.Char, PixelMapping.RGBA);
 
-        public static async Task<byte[]> GenerateProfileAsync(
+		public static async Task<byte[]> GenerateProfileAsync(
 			string avatarUrl, string username, string discriminator,
 			string level, string reputation, string credits,
 			string rank, string experience, float percentage,
@@ -155,7 +154,7 @@ namespace Ryana.ImageGeneration
 
 				// Draw the image
 				.Draw(image);
-            
+
 			using var reputation = new MagickImage("assets/reputation.png");
 			reputation.Resize(90, 90);
 			image.Composite(reputation, 300, 316, CompositeOperator.Over, Channels.RGB);

@@ -9,15 +9,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="assets\credits.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="assets\leaderboard.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="assets\reputation.png">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+        <None Remove="assets\reputation.png"/>
+        <None Remove="assets\leaderboard.png"/>
+        <None Remove="assets\credits.png"/>
     </ItemGroup>
 
 </Project>
