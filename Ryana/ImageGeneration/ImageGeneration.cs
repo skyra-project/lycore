@@ -6,11 +6,20 @@ namespace Ryana.ImageGeneration
 {
 	public static class ImageGeneration
 	{
+		private const int ProfilePremiumWidth = 800;
+		private const int ProfilePremiumHeight = 548;
 		private static readonly HttpClient Client = new HttpClient();
 		private static readonly byte[] ProfilePremiumTemplate = GenerateProfileTemplateAsync();
+		private static readonly IDrawable ProfilePremiumTemplateCircleStrokeWidth = new DrawableStrokeWidth(10);
+
+		private static readonly IDrawable ProfilePremiumTemplateCircleFillColor =
+			new DrawableFillColor(MagickColors.Transparent);
+
+		private static readonly IDrawable ProfilePremiumTemplateCircle =
+			new DrawableCircle(119, 119, 175, 175);
 
 		private static readonly PixelReadSettings ProfilePremiumPixelReadSettings =
-			new PixelReadSettings(800, 548, StorageType.Char, PixelMapping.RGBA);
+			new PixelReadSettings(ProfilePremiumWidth, ProfilePremiumHeight, StorageType.Char, PixelMapping.RGBA);
 
 		public static async Task<byte[]> GenerateProfileAsync(
 			string avatarUrl, string username, string discriminator,
@@ -76,9 +85,9 @@ namespace Ryana.ImageGeneration
 
 			image.Draw(
 				new DrawableStrokeColor(color),
-				new DrawableStrokeWidth(10),
-				new DrawableFillColor(MagickColors.Transparent),
-				new DrawableCircle(119, 119, 175, 175)
+				ProfilePremiumTemplateCircleStrokeWidth,
+				ProfilePremiumTemplateCircleFillColor,
+				ProfilePremiumTemplateCircle
 			);
 
 			return image.ToByteArray(MagickFormat.Png);
@@ -86,22 +95,18 @@ namespace Ryana.ImageGeneration
 
 		private static void CircularCrop(IMagickImage image)
 		{
-			image.Format = MagickFormat.Png;
-			image.Alpha(AlphaOption.Set);
 			using var copy = image.Clone();
-
 			copy.Distort(DistortMethod.DePolar, 0);
 			copy.VirtualPixelMethod = VirtualPixelMethod.HorizontalTile;
 			copy.BackgroundColor = MagickColors.None;
 			copy.Distort(DistortMethod.Polar, 0);
 
-			image.Compose = CompositeOperator.DstIn;
 			image.Composite(copy, CompositeOperator.CopyAlpha);
 		}
 
 		private static byte[] GenerateProfileTemplateAsync()
 		{
-			using var image = new MagickImage(MagickColors.Transparent, 800, 548);
+			using var image = new MagickImage(MagickColors.Transparent, ProfilePremiumWidth, ProfilePremiumHeight);
 
 			new Drawables()
 				// Background
