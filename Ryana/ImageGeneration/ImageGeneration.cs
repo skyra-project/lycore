@@ -5,8 +5,15 @@ namespace Ryana.ImageGeneration
 {
 	public static class ImageGeneration
 	{
+		/// <summary>
+		///     The HttpClient used for HTTP requests.
+		/// </summary>
 		internal static readonly HttpClient Client = new HttpClient();
 
+		/// <summary>
+		///     Performs a circular crop on an image.
+		/// </summary>
+		/// <param name="image">The image to crop.</param>
 		internal static void CircularCrop(IMagickImage image)
 		{
 			using var copy = image.Clone();
