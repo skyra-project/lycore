@@ -7,7 +7,7 @@ namespace Ryana.ImageGeneration
 	{
 		private const int Width = 800;
 		private const int Height = 548;
-		private static readonly byte[] Template = InitAsync();
+		private static readonly byte[] Template = Init();
 		private static readonly IDrawable TemplateCircleStrokeWidth = new DrawableStrokeWidth(10);
 
 		private static readonly IDrawable TemplateCircleFillColor =
@@ -91,7 +91,7 @@ namespace Ryana.ImageGeneration
 			return image.ToByteArray(MagickFormat.Png);
 		}
 
-		private static byte[] InitAsync()
+		private static byte[] Init()
 		{
 			using var image = new MagickImage(MagickColors.Transparent, Width, Height);
 
