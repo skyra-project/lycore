@@ -6,5 +6,6 @@ namespace NeuLink.AI.Minimax
     {
         int Evaluate();
         IEnumerable<IEvaluator> Children { get; }
+        bool IsWinnable { get; }
     }
 }

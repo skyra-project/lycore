@@ -3,5 +3,6 @@
     public interface IMinimaxable
     {
         IEvaluator GenerateNodes();
+        
     }
 }
