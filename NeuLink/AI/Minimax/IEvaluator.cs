@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 
 namespace NeuLink.AI.Minimax
 {
-    public interface IEvaluator
+    public interface IEvaluator<T> where T : class where T : IMinimaxable
     {
         int Evaluate();
-        IEnumerable<IEvaluator> Children { get; }
+        IEnumerable<IEvaluator<T>> Children { get; }
         bool IsWinnable { get; }
-        Task MakeMove<T>(T game);
+        Task MakeMove(T game);
     }
 }

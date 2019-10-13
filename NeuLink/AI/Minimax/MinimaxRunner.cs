@@ -14,10 +14,10 @@ namespace NeuLink.AI.Minimax
 
         public int Run(int depth, bool isMaximizerStart)
         {
-            return Minimax(Game.GenerateNodes(), depth, int.MinValue, int.MaxValue, isMaximizerStart);
+            return Minimax(Game.GenerateNodes<T>(), depth, int.MinValue, int.MaxValue, isMaximizerStart);
         }
 
-        private int Minimax(IEvaluator game, int depth, int alpha, int beta, bool maximizingTurn)
+        private int Minimax(IEvaluator<T> game, int depth, int alpha, int beta, bool maximizingTurn)
         {
             if (depth == 0 || game.IsWinnable)
             {
