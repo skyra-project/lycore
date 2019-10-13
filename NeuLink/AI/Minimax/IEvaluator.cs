@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace NeuLink.AI.Minimax
 {
@@ -7,5 +8,6 @@ namespace NeuLink.AI.Minimax
         int Evaluate();
         IEnumerable<IEvaluator> Children { get; }
         bool IsWinnable { get; }
+        Task MakeMove<T>(T game);
     }
 }

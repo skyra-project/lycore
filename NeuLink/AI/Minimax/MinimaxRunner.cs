@@ -21,7 +21,9 @@ namespace NeuLink.AI.Minimax
         {
             if (depth == 0 || game.IsWinnable)
             {
-                return game.Evaluate();
+                var evaluation = game.Evaluate();
+                var node = game.Children.First(node => node.Evaluate() == evaluation);
+                node.MakeMove(Game);
             }
 
             if (maximizingTurn)
