@@ -2,7 +2,7 @@
 {
     public interface IMinimaxable
     {
-        IEvaluator<T> GenerateNodes<T>();
-        
+        IEvaluator<T> GenerateNodes<T>() where T : class, IMinimaxable;
+
     }
 }
